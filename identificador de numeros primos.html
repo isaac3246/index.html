@@ -1,0 +1,30 @@
+
+<script> 
+let limite = Number(prompt('Informe um limite'));
+
+
+if (limite <= 1) {
+  alert("Não se encaixa, pois 0 ou 1 não são primos");
+} else {
+  
+  function isPrimo(numero) {
+    if (numero <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(numero); i++) {
+      if (numero % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  
+  var primos = [];
+  for (let n = 2; n <= limite; n++) {
+    if (isPrimo(n)) {
+      primos.push(n);
+    }
+  }
+
+  alert('Números primos de 0 até ' + limite + ':\n' + primos.join(', '));
+}
+</script>
